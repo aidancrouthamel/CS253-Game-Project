@@ -1,12 +1,14 @@
 ## TO DO LIST ##
 
-- Come up with final game idea / language
+ - Convert Rees's game to JS
+
+ - Implement game to website
 
 - Make web page visually appealing
 
-- Decide if we want a usernames/passwords system
+- Add seperate high scores page
 
-- Scorekeeping database
+- Make scorekeeping database
 
 
 
@@ -15,3 +17,7 @@
 - Functioning HTML page
 
 - Impliment Flask
+
+- Come up with final game idea / language
+
+- Decide if we want a usernames/passwords system
