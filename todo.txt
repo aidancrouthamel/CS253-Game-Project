@@ -1,0 +1,17 @@
+## TO DO LIST ##
+
+- Come up with final game idea / language
+
+- Make web page visually appealing
+
+- Decide if we want a usernames/passwords system
+
+- Scorekeeping database
+
+
+
+## ALREADY DONE ##
+
+- Functioning HTML page
+
+- Impliment Flask
