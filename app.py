@@ -10,6 +10,11 @@ current_page = 0
 def game_main():
     return render_template("game_main.html")
 
+
+@app.route("/leaderboard")
+def leaderboard():
+    return render_template("full_leaderboard.html")
+    
 '''
 @app.route("/", methods=["POST"])
 def leaderboard():
