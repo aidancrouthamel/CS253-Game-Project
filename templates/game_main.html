@@ -1,0 +1,56 @@
+<html>
+<head>
+  <!-- Head section of our site  -->
+  <meta charset ="UTF-8">
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>Game-Project</title>
+</head>
+<body>
+<h1>
+ [Game Name Here] <!-- Just basic title for the site-->
+</h1>
+<h2>
+ The longer you survive the higher you score!
+ <!-- Example idea for game description  -->
+</h2>
+
+<!--Our idea is to create a simple game project. This project has a game embeded into our site and will let you store a high score into the database.-->
+<!-- Could we do arcade style and use a simple 3 letter code? Like AAA or STT, etc. ? -->
+
+<div class = "shell">
+
+  <!-- list of top ten high scores using jinja for loop -->
+  <table class = "top-ten">
+    {% for row in scores %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+      </tr>
+    {% endfor %}
+
+    <a href = "/leaderboard"><button id = "lead_button">Full Leaderboard</button></a>
+  </table>
+    
+  <!-- The actual game goes here. -->
+  <div class = "game">
+    
+    <script type="py" src="game/main.py" config="static/pyscript.json"></script>
+    <script type="js" src="game.js"></script>
+    
+    <div>
+      <canvas id = "canvas" width = 800 height = 600></canvas>
+    </div>
+
+  </div>
+
+  <div class = "credits">
+    <h3>Credits</h3>
+    <div></div>
+    <div>Alex Carollo</div>
+    <div>Aidan Crouthamel</div>
+    <div>Rees Create</div>
+    <div>Rose Moss</div>
+  </div>
+
+</body>
+</html>

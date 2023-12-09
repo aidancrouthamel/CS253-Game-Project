@@ -1,0 +1,30 @@
+<html>
+<head>
+  <!-- Head section of our site
+  -->
+  <meta charset ="UTF-8">
+
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>[Game Name] - Leaderboards </title>
+</head>
+<body>
+<h1>
+ [Game Name Here] - Leaderboards 
+</h1>
+
+<!---->
+
+<a href = "/"><button id = "home_button">Return to game</button></a>
+
+<div class = "shell">
+  <table>
+    {% for row in scores %}
+    <tr>
+      <td>{{ row[0] }}</td>
+      <td>{{ row[1] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+</body>
+</html>
