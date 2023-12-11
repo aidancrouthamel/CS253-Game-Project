@@ -76,14 +76,38 @@ function animatePlayer(player)
 function animateObstacles(obstacle, amount, gameOver, respawnInterval, updateSpeed) {
     var randX;
     while (!gameOver) {
-        
+        playSound('/assets/sounds/space.mp3');
         setTimeout(() => {
 
             randX = Math.random();
             setTimeout(() => {
                 obstacle.update(amount, randx, 1);
             }, updateSpeed);
+            playSound('/assets/sounds/score.mp3');
 
         }, respawnInterval)
     }
+}
+
+function playSound(audio){ //plays a specific audio file
+    if (audio.currentTime != 0){
+        console.log('specified track already playing');  //sends console message in case of multiple calls of same audio file (debug)
+    }
+    else{
+        let sound = new Audio(audio);
+        sound.volume=.2;
+        sound.play();
+    }
+    
+}
+
+function stopAudio(audio){  //Stops the specified audio file and resets the time to 0
+    audio.pause();
+    audio.currentTime= 0;
+}
+
+function loopAudio(audio){ // This is specific for the space.mp3 file but can be used for other files
+    audio.pause();
+    audio.currentTime=14;
+    audio.play();
 }
