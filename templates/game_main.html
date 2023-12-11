@@ -20,17 +20,23 @@
 <div class = "shell">
 
   <!-- list of top ten high scores using jinja for loop -->
-  <table class = "top-ten">
-    {% for row in scores %}
-      <tr>
-        <td>{{ row[0] }}</td>
-        <td>{{ row[1] }}</td>
-      </tr>
-    {% endfor %}
+  <div class = "top-ten">
+
+    <h3> High Scores: </h3>
+
+    <table class = "top-ten">
+      {% for row in scores %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+        </tr>
+      {% endfor %}
+
+    </table>
 
     <a href = "/leaderboard"><button id = "lead_button">Full Leaderboard</button></a>
-  </table>
-    
+  </div>
+
   <!-- The actual game goes here. -->
   <div class = "game">
     
@@ -44,12 +50,14 @@
   </div>
 
   <div class = "credits">
-    <h3>Credits</h3>
-    <div></div>
-    <div>Alex Carollo</div>
-    <div>Aidan Crouthamel</div>
-    <div>Rees Create</div>
-    <div>Rose Moss</div>
+    <h3> 
+      Credits <p>
+      <div></div>
+      <div>Alex Carollo <p></div>
+      <div>Aidan Crouthamel <p></div>
+      <div>Rees Create <p></div>
+      <div>Rose Moss</div>
+    </h3>
   </div>
 
 </body>

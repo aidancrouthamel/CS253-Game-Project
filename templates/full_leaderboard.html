@@ -12,12 +12,10 @@
  [Game Name Here] - Leaderboards 
 </h1>
 
-<!---->
 
-<a href = "/"><button id = "home_button">Return to game</button></a>
 
-<div class = "shell">
-  <table>
+<div class = "table">
+  <table class = "table">
     {% for row in scores %}
     <tr>
       <td>{{ row[0] }}</td>
@@ -26,5 +24,10 @@
     {% endfor %}
   </table>
 </div>
+
+<div class = "home_b">
+  <a href = "/"><button id = "home_button">Return to game</button></a>
+</div>
+
 </body>
 </html>
