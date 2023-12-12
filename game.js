@@ -1,9 +1,11 @@
-const canvas = document.getElementById("canvas");
+//const canvas = document.getElementById("canvas");
+const canvas = new Image("/assets/backgrounded/background1.png");
 const ctx = getContext('2d');
 
 class Player {
     constructor(){
-        this.image = document.getElementById('player');
+        this.image = new Image("/assets/regularsprites/ship1.png");
+        //this.image = document.getElementById('player');
         this.spriteWidth = 50;
         this.spriteHeight = 50;
         this.width = this.spriteWidth;
@@ -41,6 +43,38 @@ class Obstacle {
         if(spawnOn){
             for(let i = 0; i < amount; i++)
             {
+                switch(Math.floor(Math.random() * 9)){  //this is a lot.... it will randomly generate images for the obstacle
+                    case 0:
+                        this.image = new Image("/assets/regularsprites/earth.png");
+                        break;
+                    case 1:
+                        this.image = new Image("/assets/regularsprites/meteor.png");
+                        break;
+                    case 2:
+                        this.image = new Image("/assets/regularsprites/meteoralt.png");
+                        break;
+                    case 3:
+                        this.image = new Image("/assets/regularsprites/meteortiny.png");
+                        break;
+                    case 4:
+                        this.image = new Image("/assets/regularsprites/meteortinyalt.png");
+                        break;
+                    case 5:
+                        this.image = new Image("/assets/regularsprites/moon.png");
+                        break;
+                    case 6:
+                        this.image = new Image("/assets/regularsprites/ringplanet.png");
+                        break;
+                    case 7:
+                        this.image = new Image("/assets/regularsprites/star.png");
+                        break;
+                    case 8:
+                        this.image = new Image("/assets/regularsprites/ship2.png");
+                        break;
+                    default:
+                        this.image = new Image("/assets/regularsprites/earth.png");
+                        break;
+                }
                 this.draw(ctx, randX, dy);
             }
         }
@@ -81,7 +115,7 @@ function animateObstacles(obstacle, amount, gameOver, respawnInterval, updateSpe
 
             randX = Math.random();
             setTimeout(() => {
-                obstacle.update(amount, randx, 1);
+                obstacle.update(amount, randX, 1);
             }, updateSpeed);
             playSound('/assets/sounds/score.mp3');
 
