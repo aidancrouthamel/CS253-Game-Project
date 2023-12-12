@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import MySQLdb
+import unittest
 
 app = Flask(__name__)
 db = MySQLdb.connect("localhost", "root", "password", "game_database")
@@ -61,5 +62,28 @@ def fetch_total_games():
         break
 
 
+class TestDatabaseFunctions(unittest.TestCase):
+    def test_fetch_rows1(self):
+        actual = fetch_rows(1)
+        string = "abc"
+        self.assertEqual(type(actual[0][0]), type(string))
+
+    def test_fetch_rows2(self):
+        actual = fetch_rows(1)
+        num = 10
+        self.assertEqual(type(actual[0][1]), type(num))
+
+    def test_fetch_total_score(self):
+        actual = fetch_total_score()
+        num = 10
+        self.assertEqual(type(int(actual[0][0])), type(num))
+
+    def test_fetch_total_games(self):
+        actual = fetch_total_games()
+        num = 10
+        self.assertEqual(type(actual[0][0]), type(num))
+
+
 if __name__ == "__main__":
+    # unittest.main()
     app.run(debug = True, host = "0.0.0.0", port = 5000)
