@@ -23,7 +23,14 @@ def leaderboard():
     return render_template("full_leaderboard.html", scores=scores, total_score=total_score, total_games=total_games)
 
 
+
 def fetch_rows(num_rows):
+    ''' Retreives rows from the database consisting of a username and a score
+
+    Arguments:
+        num_rows: The limit on the number of rows to fetch
+    '''
+
     cursor = db.cursor()
     for i in range(100):
         try:
@@ -37,6 +44,9 @@ def fetch_rows(num_rows):
 
 
 def fetch_total_score():
+    ''' Returns the sum of all scores in the user_scores table
+    '''
+
     cursor = db.cursor()
     for i in range(100):
         try:
@@ -50,6 +60,9 @@ def fetch_total_score():
 
 
 def fetch_total_games():
+    ''' Returns the total number of games played
+    '''
+
     cursor = db.cursor()
     for i in range(100):
         try:
@@ -62,6 +75,8 @@ def fetch_total_games():
         break
 
 
+# Unit tests for the database functions
+# To run the tests, uncomment unittest.main() at the bottom
 class TestDatabaseFunctions(unittest.TestCase):
     def test_fetch_rows1(self):
         actual = fetch_rows(1)
