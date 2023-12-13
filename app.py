@@ -23,6 +23,13 @@ def leaderboard():
     total_games = fetch_total_games()
     return render_template("full_leaderboard.html", scores=scores, total_score=total_score, total_games=total_games)
 
+@app.route("/leaderboardasc")
+def leaderboardasc():
+    scores = fetch_rows_rev(5000)
+    total_score = fetch_total_score()
+    total_games = fetch_total_games()
+    return render_template("full_leaderboard_asc.html", scores=scores, total_score=total_score, total_games=total_games)
+
 
 def fetch_rows(num_rows):
     ''' Retreives rows from the database consisting of a username and a score
@@ -35,6 +42,23 @@ def fetch_rows(num_rows):
     for i in range(100):
         try:
             cursor.execute("SELECT user, score FROM user_scores ORDER BY score DESC LIMIT %s", (num_rows,))
+            rows = cursor.fetchall()
+            return rows
+        except Exception as e:
+            print(e)
+            continue
+
+def fetch_rows_rev(num_rows):
+    ''' Retreives rows from the database consisting of a username and a score
+
+    Arguments:
+        num_rows: The limit on the number of rows to fetch
+    '''
+
+    cursor = db.cursor()
+    for i in range(100):
+        try:
+            cursor.execute("SELECT user, score FROM user_scores ORDER BY score ASC LIMIT %s", (num_rows,))
             rows = cursor.fetchall()
             return rows
         except Exception as e:
