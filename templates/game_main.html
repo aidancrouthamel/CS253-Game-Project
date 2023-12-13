@@ -2,7 +2,7 @@
 <head>
   <!-- Head section of our site 
   -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/static/styles.css">
   <title>Game-Project</title>
   <script type="module" src="https://pyscript.net/snapshots/2023.11.1.RC3/core.js"></script>
 </head>
@@ -17,11 +17,8 @@ Our idea is to create a simple game project. This project has a game embeded int
 <div>
 <!--img src="GameProject.jpg" alt="Game Project Here" style="width:500px;height:600px;"-->
 <!-- This is what will replaced with the actual project -->
-  <script type="py" src="../box dash/main.py" config="static/pyscript.json"></script>
-  <script type="js" src="../game.js"></script>
-  <div>
-    <canvas id = "canvas" width = 800 height = 600></canvas>
-  </div>
+  <!--<script type="py" src="../box dash/main.py" config="static/pyscript.json"></script>-->
+  
 
 <h2>
  The longer you survive the higher you score!
@@ -42,19 +39,27 @@ Our idea is to create a simple game project. This project has a game embeded int
     
   <!-- This is what will replaced with the actual project -->
   <div class = "game">
-    <img src="/assets/backgrounded/background1.png" alt="Game Project Here" style="width:500px;height:500px;"><!-- Temp file for formatting purposes--> 
+    <!--Don't use canvas, it's mysteriously not working. It could be the case that it's being choked by Flask-->
+    <!--<canvas id = "canvas" width = 800 height = 600></canvas>-->
+    <!--use these instead-->
+    <img id = player src = 'static/ship2.png' style = "position: relative;"></img> 
+    <!--<img id = obstacle src = ''></img>-->
   </div>
+  
 
   <div class = "credits">
     <h3>Credits</h3>
     <div></div>
     <div>Alex Carollo</div>
     <div>Aidan Crouthamel</div>
-    <div>Rees Create</div>
+    <div>Rees Amarteifio</div>
     <div>Rose Moss</div>
   </div>
 
 </div>
 
+  
+<script src="static/game.js"></script>
+  
 </body>
 </html>
