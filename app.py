@@ -5,12 +5,13 @@ import unittest
 app = Flask(__name__)
 db = MySQLdb.connect("localhost", "root", "password", "game_database")
 
-## Main page = 0
-## Leaderboard page = 1
-current_page = 0
-
-@app.route("/")
+@app.route("/", methods = ['GET', 'POST'])
 def game_main():
+    if request.method == 'POST':
+        user = request.values.get('User')
+        score = request.values.get('Score')
+        insert_user_score(user, score)
+
     scores = fetch_rows(10)
     return render_template("game_main.html", scores=scores)
 
@@ -21,7 +22,6 @@ def leaderboard():
     total_score = fetch_total_score()
     total_games = fetch_total_games()
     return render_template("full_leaderboard.html", scores=scores, total_score=total_score, total_games=total_games)
-
 
 
 def fetch_rows(num_rows):
