@@ -20,7 +20,7 @@ Our idea is to create a simple game project. This project has a game embeded int
   <!--<script type="py" src="../box dash/main.py" config="static/pyscript.json"></script>-->
   
 
-<h2>
+<h2 id = score>
  The longer you survive the higher you score!
  <!-- Example idea for game description  -->
 </h2>
@@ -42,9 +42,11 @@ Our idea is to create a simple game project. This project has a game embeded int
     <!--Don't use canvas, it's mysteriously not working. It could be the case that it's being choked by Flask-->
     <!--<canvas id = "canvas" width = 800 height = 600></canvas>-->
     <!--use these instead-->
-    <img id = player src = 'static/ship2.png' style = "position: relative;"></img> 
-    <!--<img id = obstacle src = ''></img>-->
+    <img id = "player" src = 'static/ship2.png' style = "position: absolute;"></img> 
+    <div id = 'backscreen' class = 'backscreen-bottom'></div>
+    <div class = 'backscreen-top'></div>
   </div>
+  
   
 
   <div class = "credits">

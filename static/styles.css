@@ -32,7 +32,7 @@ p {
   display: flex;
   vertical-align: middle;
   text-align: center;
-
+  position: relative;
   height: 500px;
 
   border: white; /* for test purposes only, delete later */
@@ -47,12 +47,38 @@ p {
   width: 200px;
   margin-right: 30px;
 } .game {
-  background-color: lightblue;/**/ 
+  /*background-color: lightblue;
+  display:flex;*/
+  overflow: hidden;
+  background-image: url("background1.png"); 
   flex: 1;
+  position:relative;
   vertical-align: center;
   margin-left: 70px;
   margin-right: 70px; 
 }
+ .backscreen-bottom{
+  background-color: #0C0E29; 
+  /**/flex: 1; 
+  position:absolute;
+  
+  bottom: -50px; 
+  width: 900px;
+  height: 100px;
+  overflow: visible;
+  z-index: 100
+}
+.backscreen-top{
+  background-color: #0C0E29; 
+  /**/flex: 1; 
+  position:absolute;
+  top: -50px; 
+  width: 900px;
+  height: 100px;
+  overflow: visible;
+  z-index: 100
+}
+
 #canvas{
   flex: 1;
   vertical-align: center;
