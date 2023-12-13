@@ -40,7 +40,6 @@ def fetch_rows(num_rows):
         except Exception as e:
             print(e)
             continue
-        break
 
 
 def fetch_total_score():
@@ -56,7 +55,6 @@ def fetch_total_score():
         except Exception as e:
             print(e)
             continue
-        break
 
 
 def fetch_total_games():
@@ -72,7 +70,6 @@ def fetch_total_games():
         except Exception as e:
             print(e)
             continue
-        break
 
 
 def insert_user_score(user, score):
@@ -83,6 +80,7 @@ def insert_user_score(user, score):
     for i in range(100):
         try:
             cursor.execute("INSERT INTO user_scores (user, score) VALUES (%s, %s)", (user, score))
+            db.commit()
         except Exception as e:
             print(e)
             continue
