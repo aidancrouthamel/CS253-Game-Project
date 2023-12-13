@@ -75,6 +75,20 @@ def fetch_total_games():
         break
 
 
+def insert_user_score(user, score):
+    ''' Inserts a username and score into the user_scores table
+    '''
+
+    cursor = db.cursor()
+    for i in range(100):
+        try:
+            cursor.execute("INSERT INTO user_scores (user, score) VALUES (%s, %s)", (user, score))
+        except Exception as e:
+            print(e)
+            continue
+        break
+
+
 # Unit tests for the database functions
 # To run the tests, uncomment unittest.main() at the bottom
 class TestDatabaseFunctions(unittest.TestCase):
