@@ -15,14 +15,21 @@
 
 <div>
   <h2>
-  <p> The sum of all scores is: {{ total_score[0][0] }} </p>
-  <p> The total number of games played is: {{ total_games[0][0] }} </p>
+   The sum of all scores is: {{ total_score[0][0] }} 
+  <br> The total number of games played is: {{ total_games[0][0] }} 
   </h2>
 </div>
 
-<h2>Scores are currently displayed from lowest to highest.</h2> <a href = "/leaderboard"><button id = "desc">Sort highest to lowest</button></a>
+  <h4>Scores are currently displayed from lowest to highest.</h4> 
+
+
+<div class = "buttons">
+  <a href = "/"><button id = "home_button">Return to game</button></a>
+  <a href = "/leaderboard"><button id = "desc">Sort highest to lowest</button></a>
+</div>
 
 <div class = "table">
+<br>
   <table class = "table">
     {% for row in scores %}
     <tr>
@@ -31,10 +38,6 @@
     </tr>
     {% endfor %}
   </table>
-</div>
-
-<div class = "home_b">
-  <a href = "/"><button id = "home_button">Return to game</button></a>
 </div>
 
 </body>
