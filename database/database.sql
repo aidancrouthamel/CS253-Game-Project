@@ -27,3 +27,14 @@ INSERT INTO user_scores (user, score) VALUES ("GHI", "1238");
 INSERT INTO user_scores (user, score) VALUES ("HIJ", "1256");
 INSERT INTO user_scores (user, score) VALUES ("IJK", "1560");
 INSERT INTO user_scores (user, score) VALUES ("JKL", "1200");
+
+INSERT INTO user_scores (user, score) VALUES ("CRL", "1234");
+INSERT INTO user_scores (user, score) VALUES ("JOE", "3899");
+INSERT INTO user_scores (user, score) VALUES ("JHN", "13695");
+INSERT INTO user_scores (user, score) VALUES ("MAR", "2003");
+INSERT INTO user_scores (user, score) VALUES ("LIS", "4010");
+INSERT INTO user_scores (user, score) VALUES ("TRY", "23232");
+INSERT INTO user_scores (user, score) VALUES ("POP", "1239");
+INSERT INTO user_scores (user, score) VALUES ("GOP", "12586");
+INSERT INTO user_scores (user, score) VALUES ("BOP", "1565");
+INSERT INTO user_scores (user, score) VALUES ("HOP", "12000");
