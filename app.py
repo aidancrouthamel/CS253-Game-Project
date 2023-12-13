@@ -3,7 +3,16 @@ import MySQLdb
 import unittest
 
 app = Flask(__name__)
-db = MySQLdb.connect("localhost", "root", "password", "game_database")
+
+# Connecting to the database
+for i in range(100):
+    try:
+        db = MySQLdb.connect("localhost", "root", "password", "game_database")
+    except Exception as e:
+        print(e)
+        continue
+    break
+
 
 @app.route("/", methods = ['GET', 'POST'])
 def game_main():
