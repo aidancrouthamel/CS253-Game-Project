@@ -1,12 +1,3 @@
-Game: let's vote on which game we want to make, e.g Tetris, some version of Geometry Dash or Flappy Bird, e.t.c.
+As a player, I want an endless game in which surviving longer leads to a higher score. This type of game is simple enough that many people will be able to play. More specifically, in the game, the user will control a spaceship that will need to avoid meteors. 
 
-Basically some type of game that the longer you are able to survive, the higher your score. Those are normally simple but really addictive 
-
-Single player game preferably for simplicity, but we can spice it up and make it multiplayer
-
-Game should allow users to sign in. Preferably should not require users to sign in before playing, but should allow them to sign in, 
-so if they have a highscore, it gets recorded under their account
-
-Game should at least store each player's highscores, and the overall best score. (We can spice it up and make a leaderboard if we have time 🔥)
-
-
+In addition, when the game ends, the user's name and score will be inserted into a database. Data will be retreived from the database in order to display a leaderboard. The main page of the site will display the ten highest scores, and there will also be a leaderboard page listing a larger amount of the scores. 
