@@ -93,3 +93,21 @@ button{
 .buttons{
   text-align:center;
 }
+
+.backscreen-top{
+  background-color: #0C0E29; 
+  /**/flex: 1; 
+  position:absolute;
+  top: -50px; 
+  width: 900px;
+  height: 100px;
+  overflow: visible;
+  z-index: 100
+}
+
+#canvas{
+  flex: 1;
+  vertical-align: center;
+  width: 600px;
+  height: 800px;
+}

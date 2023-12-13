@@ -52,12 +52,11 @@
   <!-- The actual game goes here. -->
   <div class = "game">
     
-    <script type="py" src="game/main.py" config="static/pyscript.json"></script>
-    <script type="js" src="game.js"></script>
-    
-    <div>
-      <canvas id = "canvas" width = 800 height = 600></canvas>
-    </div>
+    <img id = "player" src = 'static/ship2.png' style = "position: absolute;"></img> 
+    <div id = 'backscreen' class = 'backscreen-bottom'></div>
+    <div class = 'backscreen-top'></div>
+
+    <script src="static/game.js"></script>
 
   </div>
 
@@ -71,6 +70,7 @@
       <div>Rose Moss</div>
     </h3>
   </div>
+
 
 </body>
 </html>
